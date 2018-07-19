@@ -57,6 +57,10 @@
     }
 
     .hand {
+      transition-timing-function: ease-in;
+      transition: all 0.05;
+      transform-origin: 100%;
+      transform: rotate(90deg);
       width:50%;
       height:6px;
       background:black;
@@ -67,8 +71,24 @@
   </style>
 
   <script>
+    const hourHand = document.querySelector(".hour-hand")
+    const minuteHand = document.querySelector(".min-hand")
+    const secondHand = document.querySelector(".second-hand")
 
+    const calcDegrees = (time, max) => (time/max)*360 + 90;
 
+    setInterval(() => {
+      const now = new Date;
+      console.log(now);
+      var secondRotation = calcDegrees(now.getSeconds(), 60),
+          minuteRotation = calcDegrees(now.getMinutes(), 60),
+          hourRotation = calcDegrees(now.getHours(), 12);
+      console.log(hourRotation, minuteRotation, secondRotation);
+      hourHand.style.transform = `rotate(${hourRotation}deg)`;
+      minuteHand.style.transform = `rotate(${minuteRotation}deg)`;
+      secondHand.style.transform = `rotate(${secondRotation}deg)`;
+
+    }, 1000);
   </script>
 </body>
 </html>
