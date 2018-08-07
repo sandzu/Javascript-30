@@ -14,19 +14,16 @@
     myCanvas.height = window.innerHeight;
 
     const ctx = myCanvas.getContext('2d');
-
+    ctx.lineJoin = 'round';               // Intersecting/connected lines will have a smooth join
+    ctx.lineCap = 'round';
     const mouse = {
       x:0,
       y:0
     }
 
-    const last_mouse = {
-      ...mouse
-    }
-
-    var lineHue = 0;
-
-    var width = true;
+    const last_mouse = {  ...mouse}
+    var hue = 0;
+    var increaseWidth = true;
 
     function drawOnCanvas(){
       ctx.strokeStyle = `hsl(${hue}, 100%, 50%)`;
@@ -35,7 +32,31 @@
       ctx.lineTo(mouse.x, mouse.y);
       ctx.closePath();
       ctx.stroke();
+      hue >= 360 ? hue = 0 : hue++;
+      increaseWidth ? ctx.lineWidth++ : ctx.lineWidth--;
+      if(ctx.lineWidth >= 100 || ctx.lineWidth <= 1) increaseWidth = !increaseWidth;
     }
+
+
+    const setMouseLocation = (e) => {
+      [last_mouse.x, last_mouse.y, mouse.x, mouse.y] = [mouse.x, mouse.y, e.offsetX, e.offsetY];
+    }
+
+    const quick = {
+      add: ()=>myCanvas.addEventListener('mousemove', drawOnCanvas),
+      rem: ()=>myCanvas.removeEventListener('mousemove', drawOnCanvas)
+    }
+
+    const evs = [
+      {e: 'mousemove', h: setMouseLocation},
+      {e: 'mousedown', h: quick.add},
+      {e: 'mouseup', h: quick.rem},
+      {e: 'mouseout', h: quick.rem}
+    ]
+
+
+    evs.forEach(({e, h}) => { myCanvas.addEventListener(e,h); });
+
 
   })();//immediately invoke anonymous function
 </script>
