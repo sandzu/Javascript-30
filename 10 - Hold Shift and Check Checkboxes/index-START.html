@@ -99,10 +99,13 @@
   </div>
 
 <script>
-  itemList = document.querySelectorAll(".item");
+  const itemList = document.querySelectorAll(".item");
   itemList.forEach( (el, index) => {
     el.setAttribute("id", index);
   });
+
+  const item_inputs = document.querySelectorAll(".inbox input[type='checkbox']");
+  console.dir(item_inputs);
 </script>
 </body>
 </html>
