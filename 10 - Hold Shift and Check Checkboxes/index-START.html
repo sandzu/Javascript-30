@@ -99,6 +99,10 @@
   </div>
 
 <script>
+  itemList = document.querySelectorAll(".item");
+  itemList.forEach( (el, index) => {
+    el.setAttribute("id", index);
+  });
 </script>
 </body>
 </html>
