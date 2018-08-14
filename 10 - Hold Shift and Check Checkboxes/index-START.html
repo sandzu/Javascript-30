@@ -99,13 +99,34 @@
   </div>
 
 <script>
-  const itemList = document.querySelectorAll(".item");
-  itemList.forEach( (el, index) => {
-    el.setAttribute("id", index);
-  });
+  (()=>{
 
-  const item_inputs = document.querySelectorAll(".inbox input[type='checkbox']");
-  console.dir(item_inputs);
+    const itemList = document.querySelectorAll("input");
+    itemList.forEach( (el, index) => {
+      el.setAttribute("id", index);
+    });
+
+    const item_inputs = document.querySelectorAll(".inbox input[type='checkbox']");
+    let lastSelected;
+
+    item_inputs,forEach(checkbox =>
+      checkbox.addEventListener('click', multiChecker)
+    );
+
+    const multiChecker (e) => {
+      if(lastSelected && e.shiftKey){
+        this.checked = lastSelected.checked;
+      }
+      let startIdx, endIdx;
+      this.id > lastSelected.id ? [startIdx, endIdx] = [lastSelected.id, this.id] : [startIdx, endIdx] = [this.id, lastSelected.id]
+      const middleInputs = Array.from(item_inputs).slice(parseInt(startIdx) + 1, endIdx);
+      middleInputs.forEach(checkbox => checkbox.checked = this.checked);
+      lastSelected = this;
+    };
+
+
+
+  })();
 </script>
 </body>
 </html>
