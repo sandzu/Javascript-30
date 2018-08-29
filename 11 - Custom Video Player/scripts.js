@@ -11,6 +11,7 @@
     togglePlay = () => video[video.pasued? "play" : "pause"]();
     updateButton = () => toggle.textContent = video.paused ?  "►" : "❚ ❚",
     handleProgress = () => progressBar.style.flexBasis = `${video.currentTime / video.duration * 100}%`,
-
+    scrub = e =>
+      video.currentTime = e.offsetX / progress.offsetWidth * video.duration,
   // console.log(skip);
 })();
