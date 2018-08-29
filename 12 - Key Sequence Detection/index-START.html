@@ -7,6 +7,27 @@
 </head>
 <body>
 <script>
+(()=>{
+  const SECRET_CODE = 'uni';
+  const keyInput = [];
+  const checkInput = arr => arr.join("") === SECRET_CODE;
+  // console.log(document)
+  // const el = document.querySelector("body");
+  // console.log(el);
+  document.querySelector("body").addEventListener('keyup', (e) => {
+    // console.log(e)
+    keyInput.push(e.key);
+    console.log(keyInput);
+    console.log(keyInput.join(""))
+    if(checkInput(keyInput)){
+      cornify_add();
+    }
+    if(keyInput.length>=3){
+      keyInput.shift();
+    }
+  });
+
+})();
 </script>
 </body>
 </html>
