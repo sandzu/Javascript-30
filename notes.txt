@@ -1,0 +1,25 @@
+takeaways
+
+1: use classes to animate and use element.classList.add('active') or
+element.classList.remove('active')
+  use the transitionend event to apply end-of-transition mutations
+  (like changing classList to remove active)
+
+3. domElement.dataset? ?
+   domElement.style.setProperty ??
+
+5. domElement.classList.toggle //gives the class if it doesn't have it, and vice versa
+  suppose f is a function called by an event handler.
+    this => domElement
+    e => the event
+
+6. use fetch(endpoint).then(callback) to hit apis
+    domElement.innerHTML sets innerhtml
+
+7. Array.some ?
+    Array.every ?\
+    Array.findIndex
+
+    Array.slice !
+
+8. i like this structure (using isDrawing boolean)
