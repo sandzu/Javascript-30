@@ -23,3 +23,14 @@ element.classList.remove('active')
     Array.slice !
 
 8. i like this structure (using isDrawing boolean)
+
+22.
+domElement.getBoundingClientRect() gives a domRect object representing the
+css border boces associated with the element
+
+window.scrollX / scrollY gives access to scroll coords
+domElement.style.transform
+
+23. speechSynthesis is the controller interface for the web speech api speech service (duh)
+24. when an elements position changes to fixed it no longer takes space in the document
+domElement.offsetTop // relative distance to the top of the node parent
