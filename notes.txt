@@ -24,6 +24,9 @@ element.classList.remove('active')
 
 8. i like this structure (using isDrawing boolean)
 
+13. debounce- prevent repetitive function calls from slowing down performance
+
+
 22.
 domElement.getBoundingClientRect() gives a domRect object representing the
 css border boces associated with the element
