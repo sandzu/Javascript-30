@@ -34,7 +34,13 @@ element.classList.remove('active')
   note to self: look into localStorage- looks like some json
   why is e.target.querySelector needed? why not just use e.target?
   what is domElement.matches?
-  
+
+16.
+  did I mention domElement.style.specificStyleName can be used to change specific style? 
+17.
+  navigator.mediaDevices.getUserMedia to access webcam
+  https://tympanus.net/codrops/2011/11/24/top-10-reasons-to-use-html5-right-now/
+  ^ just check this shit out. 
 
 22.
 domElement.getBoundingClientRect() gives a domRect object representing the
