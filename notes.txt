@@ -41,6 +41,13 @@ element.classList.remove('active')
   navigator.mediaDevices.getUserMedia to access webcam
   https://tympanus.net/codrops/2011/11/24/top-10-reasons-to-use-html5-right-now/
   ^ just check this shit out. 
+19. what is a DataURL (canvas.toDataURL)
+20. 
+  use window.speechRecognition or window.webkitSpeechRecognition
+21.
+  navigator.geolocation <-research this 
+
+
 
 22.
 domElement.getBoundingClientRect() gives a domRect object representing the
