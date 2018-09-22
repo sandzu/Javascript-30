@@ -45,7 +45,7 @@ element.classList.remove('active')
 20. 
   use window.speechRecognition or window.webkitSpeechRecognition
 21.
-  navigator.geolocation <-research this 
+  navigator.geolocation <-research this **
 
 
 
